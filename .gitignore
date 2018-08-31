@@ -1,0 +1,5 @@
+*.env
+/mysql/data/*
+/mysql/init/*
+backup.sql
+
