@@ -29,6 +29,3 @@ services:
 
 networks:
   localnet:
-
-# to restore existing db from backup:
-# cat backup.sql | docker exec -i CONTAINER /usr/bin/mysql -u root --password=root DATABASE
