@@ -2,4 +2,8 @@
 /mysql/data/*
 /mysql/init/*
 backup.sql
+logs/*/*
+config/*
+env.php
+app/*
 
