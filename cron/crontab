@@ -1,0 +1,2 @@
+#minute hour    day     month   week    command
+55       23       *       *       *       /usr/local/bin/backup.sh

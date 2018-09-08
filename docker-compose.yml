@@ -45,6 +45,23 @@ services:
      - ./app:/var/www/html
      - ./logs/apache2:/var/log/apache2
 
+  cron:
+    build: ./cron
+    container_name: "${CONTAINER_PREFIX}_cron"
+    restart: 'always'
+    depends_on:
+      - db
+    networks:
+      - localnet
+    volumes:
+      - ./mysql/backup:/backup
+    command: ["-l", "8", "-d", "8"]
+    environment:
+      - MYSQL_HOST=db
+      - MYSQL_USER
+      - MYSQL_PASSWORD
+      - MYSQL_DATABASE
+
 networks:
   localnet:
     name: "${CONTAINER_PREFIX}_net"
