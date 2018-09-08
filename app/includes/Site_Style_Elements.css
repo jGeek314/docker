@@ -1,0 +1,82 @@
+/* [table-form] */
+
+.table-form{
+	display:inline-block;
+}
+.table-form tr td:nth-child(1){
+	font-size: 16px;
+	color: rgb(100,50,50);
+	font-weight:bold;
+}
+
+.table-form button{
+	background-color:white;
+}
+.even {
+	background-color: rgb(220,220,200);
+}
+
+.table-header td{
+	border-bottom:1px solid black;
+	color:rgb(0,32,65);
+	font-weight:bold;
+	font-size:14px;
+}
+.table-row td{
+    font-size:14px;
+    padding:4px;
+    color: rgb(0,32,107);
+}
+.table-footer td{
+	border-top:1px solid black;
+}
+
+.table-row td:nth-child(2),
+.table-row td:nth-child(3),
+.table-row td:nth-child(4),
+.table-row td:nth-child(5){
+	border-left:1px solid gray;
+}
+
+.table-row td i{
+	color:gray;
+	font-size:12px;
+}
+
+input.error{
+	border-color:red;
+}
+select.error{
+	border-color:red;
+}
+label.error{
+	font-weight:bold;
+	font-size:10px;
+	font-style:italic;
+	border:1px solid red;
+	white-space: nowrap;
+	position: relative;
+	border-radius:10px;
+	padding:3px;
+	background-color:white;
+}
+
+.errorwrap{
+	height:0px;
+	width:0px;
+	overflow: visible;
+	display:inline-block;
+}
+
+button{
+    padding:4px;
+    background-color:rgb(220,220,220);
+    border-radius:2px;
+    cursor:pointer;
+}
+
+button.small{
+    padding-top:1px;
+    padding-bottom:1px;
+    border-radius:5px;
+}

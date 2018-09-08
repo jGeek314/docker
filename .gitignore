@@ -5,5 +5,3 @@ backup.sql
 logs/*/*
 config/*
 env.php
-app/*
-

@@ -1,0 +1,6 @@
+Restrictions that need built:
+
+    - A slush fund can only be allowed for a checking/saving account (not a credit card).
+    - Only one slush account can be defined at a time per database.
+        - The "paying" account must be in the summary
+        - The "receiving" account must NOT be in the summary.

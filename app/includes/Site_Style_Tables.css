@@ -1,0 +1,49 @@
+
+.zebra-table{
+    border-collapse: collapse;
+    table-layout: fixed;
+    font-family:"Tahoma, Geneva, sans-serif";
+    font-size:16px;
+}
+
+
+.zebra-table thead th:not(.right):not(.center){
+    text-align:left;
+}
+.zebra-table tbody tr:nth-child(even) td{
+    background-color: rgb(220,220,200);
+    
+}
+
+.zebra-table td,
+.zebra-table th{
+    overflow: hidden;
+    padding:4px;
+    text-overflow: ellipsis;
+    height:20px;
+    white-space: nowrap;
+    color: rgb(0,32,107);
+}
+
+div.zebra-table-wrap{
+    overflow-y:scroll;
+    border-top:1px solid gray;
+    border-bottom:1px solid gray;
+}
+table.zebra-table tbody.wrap tr:first-child td{
+    border-top:1px solid gray;
+}
+table.zebra-table tbody.wrap tr:last-child td{
+    border-bottom:1px solid gray;
+}
+
+
+td.right,
+th.right{
+    text-align:right;
+}
+
+td.center,
+th.center{
+    text-align:center;
+}
