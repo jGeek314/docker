@@ -1,4 +1,4 @@
-*.env
+.env
 /mysql/data/*
 /mysql/init/*
 /mysql/backup/*
