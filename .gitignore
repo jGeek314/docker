@@ -1,6 +1,7 @@
 *.env
 /mysql/data/*
 /mysql/init/*
+/mysql/backup/*
 backup.sql
 logs/*/*
 config/*
