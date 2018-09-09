@@ -104,12 +104,12 @@ $AccountDefaultSQL = "
 
      left join
       (SELECT	Sum(Amount) as AccountBalance, accountid
-       FROM		accounttransactionsExtended
+       FROM		accounttransactionsextended
        Group by accountid)  total
      on defaultaccount.accountid = total.accountid
     left join
       (SELECT	Sum(Amount) as VerifiedBalance, accountid
-       FROM		accounttransactionsExtended
+       FROM		accounttransactionsextended
        WHERE	VerifiedDate is not null
        Group by accountid)  verified
      on defaultaccount.accountid = verified.accountid
@@ -129,7 +129,7 @@ $AccountDefaultSQL = "
         (select linkedVerified, accountid 
          from 
             (Select Sum(Amount) as linkedVerified, linkedaccountid
-             From   accounttransactionsExtended
+             From   accounttransactionsextended
              where  verifieddate is not null
              Group by linkedaccountid) la
              inner join
@@ -154,7 +154,7 @@ while($row = $AccountDefault->fetch(PDO::FETCH_ASSOC)) {
 $accountsummaryResults = query("
     SELECT      Sum(Amount) as accountTotal
     FROM	    accounts
-    left join   accounttransactionsExtended on accounts.accountid = accounttransactionsExtended.accountid
+    left join   accounttransactionsextended on accounts.accountid = accounttransactionsextended.accountid
     Where       accounts.Summary = 'Y' and AccountDeleted <> 'Y'
 ");
 

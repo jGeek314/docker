@@ -47,7 +47,7 @@
         
 	$CatSummary = $db->query("
 		SELECT *, UNIX_TIMESTAMP(EntryDate) as phpEntryDate
-		FROM	accounttransactionsExtended
+		FROM	accounttransactionsextended
 		WHERE	Category = $catID
 		AND	AccountID IN $ActiveAccountList
 		ORDER BY 	EntryDate desc

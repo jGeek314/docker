@@ -37,7 +37,7 @@
 	
 	$accounttransactions = $db->query("
 		SELECT 	*, UNIX_TIMESTAMP(EntryDate) as phpEntryDate
-		FROM	accounttransactionsExtended
+		FROM	accounttransactionsextended
 		WHERE	AccountID = $defaultaccount
 		ORDER BY EntryDate Desc
 		LIMIT 50

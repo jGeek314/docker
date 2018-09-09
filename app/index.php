@@ -34,11 +34,11 @@
         
 		FROM		accounts
 		LEFT JOIN	(SELECT 	Sum(Amount) as accountTotal, accountid
-					FROM		accounttransactionsExtended
+					FROM		accounttransactionsextended
 					GROUP BY 	AccountID) as a ON accounts.AccountID = a.AccountID
                     
 		LEFT JOIN	(SELECT		Sum(Amount) as VerifiedTotal, AccountID
-					FROM		accounttransactionsExtended
+					FROM		accounttransactionsextended
 					WHERE		VerifiedDate is not null
 					GROUP BY	AccountID) as b ON accounts.AccountID = b.AccountID
                 LEFT JOIN       accounttypes on accounts.AccountType = accounttypes.AccountTypeCode
@@ -53,11 +53,11 @@
         
 		FROM		accounts
 		LEFT JOIN	(SELECT 	Sum(Amount) as accountTotal, accountid
-					FROM		accounttransactionsExtended
+					FROM		accounttransactionsextended
 					GROUP BY 	AccountID) as a ON accounts.AccountID = a.AccountID
                     
 		LEFT JOIN	(SELECT		Sum(Amount) as VerifiedTotal, linkedAccountID as AccountID
-					FROM		accounttransactionsExtended 
+					FROM		accounttransactionsextended 
 					WHERE		VerifiedDate is not null
                     and         AccountID in (Select AccountID From accounts where AccountDeleted <> 'Y')
 					GROUP BY	linkedAccountID) as b ON accounts.AccountID = b.AccountID
@@ -74,16 +74,16 @@
 					a.AccountTotal, b.VerifiedTotal, c.TransCount
 		FROM		accounttypes
 		LEFT JOIN	(SELECT 	Sum(Amount) as accountTotal, AccountType
-					FROM		accounttransactionsExtended
+					FROM		accounttransactionsextended
 					WHERE		AccountID IN (Select AccountID From accounts Where AccountDeleted <> 'Y')
 					GROUP BY 	AccountType) as a ON accounttypes.AccountTypeCode = a.AccountType
 		LEFT JOIN	(SELECT		Sum(Amount) as VerifiedTotal, AccountType
-					FROM		accounttransactionsExtended
+					FROM		accounttransactionsextended
 					WHERE		VerifiedDate is not null
 					AND		AccountID IN (Select AccountID From accounts Where AccountDeleted <> 'Y')
 					GROUP BY	AccountType) as b ON accounttypes.AccountTypeCode = b.AccountType
 		LEFT JOIN	(SELECT		count(AccountType) as TransCount, AccountType
-					FROM		accounttransactionsExtended
+					FROM		accounttransactionsextended
 					WHERE		AccountID IN (Select AccountID From accounts Where AccountDeleted <> 'Y')
 					GROUP BY	AccountType) as c ON accounttypes.AccountTypeCode = c.AccountType
 		ORDER BY 	TransCount desc
@@ -95,10 +95,10 @@
 		FROM		accounts
                 LEFT JOIN       accounttypes on accounts.AccountType = accounttypes.AccountTypeCode
 		LEFT JOIN	(SELECT 	Sum(Amount) as accountTotal, accountid
-					FROM		accounttransactionsExtended
+					FROM		accounttransactionsextended
 					GROUP BY 	AccountID) as a ON accounts.AccountID = a.AccountID
 		LEFT JOIN	(SELECT		Sum(Amount) as VerifiedTotal, AccountID
-					FROM		accounttransactionsExtended
+					FROM		accounttransactionsextended
 					WHERE		VerifiedDate is not Null
 					GROUP BY	AccountID) as b ON accounts.AccountID = b.AccountID
                 

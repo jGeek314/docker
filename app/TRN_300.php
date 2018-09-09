@@ -58,14 +58,14 @@ $Year8 = ($ThisMonthNum - $Month8)/12;
             FROM	categories as cat
             LEFT JOIN	
                         (SELECT Sum(Amount) as Sum1, Category
-                        FROM accounttransactionsExtended
+                        FROM accounttransactionsextended
                         WHERE EntryDate >= '$Year1-$Month1-01 00:00:00'
                         AND	AccountID IN $ActiveAccountList
                         GROUP BY Category) as a
                         ON cat.CategoryID = a.Category
             LEFT JOIN	
                         (SELECT Sum(Amount) as Sum2, Category
-                        FROM accounttransactionsExtended
+                        FROM accounttransactionsextended
                         WHERE EntryDate >= '$Year2-$Month2-01 00:00:00'
                         AND EntryDate < '$Year1-$Month1-01 00:00:00'
                         AND	AccountID IN $ActiveAccountList
@@ -74,7 +74,7 @@ $Year8 = ($ThisMonthNum - $Month8)/12;
 
             LEFT JOIN	
                         (SELECT Sum(Amount) as Sum3, Category
-                        FROM accounttransactionsExtended
+                        FROM accounttransactionsextended
                         WHERE EntryDate >= '$Year3-$Month3-01 00:00:00'
                         AND EntryDate < '$Year2-$Month2-01 00:00:00'
                         AND	AccountID IN $ActiveAccountList
@@ -82,14 +82,14 @@ $Year8 = ($ThisMonthNum - $Month8)/12;
                         ON cat.CategoryID = c.Category
             LEFT JOIN	
                         (SELECT Sum(Amount) as Sum4, Category
-                        FROM accounttransactionsExtended
+                        FROM accounttransactionsextended
                         WHERE EntryDate >= '$Year4-$Month4-01 00:00:00'
                         AND EntryDate < '$Year3-$Month3-01 00:00:00'
                         GROUP BY Category) as d
                         ON cat.CategoryID = d.Category
             LEFT JOIN	
                         (SELECT Sum(Amount) as Sum5, Category
-                        FROM accounttransactionsExtended
+                        FROM accounttransactionsextended
                         WHERE EntryDate >= '$Year5-$Month5-01 00:00:00'
                         AND EntryDate < '$Year4-$Month4-01 00:00:00'
                         AND	AccountID IN $ActiveAccountList
@@ -97,7 +97,7 @@ $Year8 = ($ThisMonthNum - $Month8)/12;
                         ON cat.CategoryID = e.Category
             LEFT JOIN	
                         (SELECT Sum(Amount) as Sum6, Category
-                        FROM accounttransactionsExtended
+                        FROM accounttransactionsextended
                         WHERE EntryDate >= '$Year6-$Month6-01 00:00:00'
                         AND EntryDate < '$Year5-$Month5-01 00:00:00'
                         AND	AccountID IN $ActiveAccountList
@@ -105,7 +105,7 @@ $Year8 = ($ThisMonthNum - $Month8)/12;
                         ON cat.CategoryID = f.Category
             LEFT JOIN	
                         (SELECT Sum(Amount) as Sum7, Category
-                        FROM accounttransactionsExtended
+                        FROM accounttransactionsextended
                         WHERE EntryDate >= '$Year7-$Month7-01 00:00:00'
                         AND EntryDate < '$Year6-$Month6-01 00:00:00'
                         AND	AccountID IN $ActiveAccountList
@@ -113,7 +113,7 @@ $Year8 = ($ThisMonthNum - $Month8)/12;
                         ON cat.CategoryID = g.Category
             LEFT JOIN	
                         (SELECT Sum(Amount) as Sum8, Category
-                        FROM accounttransactionsExtended
+                        FROM accounttransactionsextended
                         WHERE EntryDate >= '$Year8-$Month8-01 00:00:00'
                         AND EntryDate < '$Year7-$Month7-01 00:00:00'
                         AND	AccountID IN $ActiveAccountList
@@ -126,14 +126,14 @@ $Year8 = ($ThisMonthNum - $Month8)/12;
 	$MonthlyTotSummary = $db->query("
             SELECT      a.Sum1, b.Sum2, c.Sum3, d.Sum4, e.Sum5, f.Sum6, g.Sum7, h.Sum8
             FROM	(SELECT Sum(Amount) as Sum1, 'bind' as bind
-                        FROM accounttransactionsExtended
+                        FROM accounttransactionsextended
                         WHERE EntryDate >= '$Year1-$Month1-01 00:00:00'
                         AND SummaryHide <> 'Y'
                         AND	AccountID IN $ActiveAccountList
                         ) as a
             LEFT JOIN	
                         (SELECT Sum(Amount) as Sum2, 'bind' as bind
-                        FROM accounttransactionsExtended
+                        FROM accounttransactionsextended
                         WHERE EntryDate >= '$Year2-$Month2-01 00:00:00'
                         AND EntryDate < '$Year1-$Month1-01 00:00:00'
                         AND SummaryHide <> 'Y'
@@ -141,7 +141,7 @@ $Year8 = ($ThisMonthNum - $Month8)/12;
                         ON a.bind = b.bind
             LEFT JOIN	
                         (SELECT Sum(Amount) as Sum3, 'bind' as bind
-                        FROM accounttransactionsExtended
+                        FROM accounttransactionsextended
                         WHERE EntryDate >= '$Year3-$Month3-01 00:00:00'
                         AND EntryDate < '$Year2-$Month2-01 00:00:00'
                         AND SummaryHide <> 'Y'
@@ -149,7 +149,7 @@ $Year8 = ($ThisMonthNum - $Month8)/12;
                         ON a.bind = c.bind
             LEFT JOIN	
                         (SELECT Sum(Amount) as Sum4, 'bind' as bind
-                        FROM accounttransactionsExtended
+                        FROM accounttransactionsextended
                         WHERE EntryDate >= '$Year4-$Month4-01 00:00:00'
                         AND EntryDate < '$Year3-$Month3-01 00:00:00'
                         AND SummaryHide <> 'Y'
@@ -157,7 +157,7 @@ $Year8 = ($ThisMonthNum - $Month8)/12;
                         ON a.bind = d.bind
             LEFT JOIN	
                         (SELECT Sum(Amount) as Sum5, 'bind' as bind
-                        FROM accounttransactionsExtended
+                        FROM accounttransactionsextended
                         WHERE EntryDate >= '$Year5-$Month5-01 00:00:00'
                         AND EntryDate < '$Year4-$Month4-01 00:00:00'
                         AND SummaryHide <> 'Y'
@@ -165,7 +165,7 @@ $Year8 = ($ThisMonthNum - $Month8)/12;
                         ON a.bind = e.bind
             LEFT JOIN	
                         (SELECT Sum(Amount) as Sum6, 'bind' as bind
-                        FROM accounttransactionsExtended
+                        FROM accounttransactionsextended
                         WHERE EntryDate >= '$Year6-$Month6-01 00:00:00'
                         AND EntryDate < '$Year5-$Month5-01 00:00:00'
                         AND SummaryHide <> 'Y'
@@ -173,7 +173,7 @@ $Year8 = ($ThisMonthNum - $Month8)/12;
                         ON a.bind = f.bind
             LEFT JOIN	
                         (SELECT Sum(Amount) as Sum7, 'bind' as bind
-                        FROM accounttransactionsExtended
+                        FROM accounttransactionsextended
                         WHERE EntryDate >= '$Year7-$Month7-01 00:00:00'
                         AND EntryDate < '$Year6-$Month6-01 00:00:00'
                         AND SummaryHide <> 'Y'
@@ -181,7 +181,7 @@ $Year8 = ($ThisMonthNum - $Month8)/12;
                         ON a.bind = g.bind
             LEFT JOIN	
                         (SELECT Sum(Amount) as Sum8, 'bind' as bind
-                        FROM accounttransactionsExtended
+                        FROM accounttransactionsextended
                         WHERE EntryDate >= '$Year8-$Month8-01 00:00:00'
                         AND EntryDate < '$Year7-$Month7-01 00:00:00'
                         AND SummaryHide <> 'Y'

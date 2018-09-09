@@ -60,18 +60,18 @@
 	$accounttransactions = $db->query("
 		SELECT 	*, UNIX_TIMESTAMP(EntryDate) as phpEntryDate, EntryDate,
                 If( VerifiedDate is null, 1, 2) as vSort
-		FROM	accounttransactionsExtended
+		FROM	accounttransactionsextended
 		WHERE	AccountID = $defaultaccount
 		ORDER BY vSort, EntryDate desc
         limit 50
 	");
 	
 	$RecentlyVerified = $db->query("
-		SELECT 	*, UNIX_TIMESTAMP(accounttransactionsExtended.EntryDate) as phpEntryDate, accounttransactions.EntryDate, accounttransactions.VerifiedDate
-		FROM	accounttransactionsExtended
-		LEFT JOIN accounttransactions on accounttransactionsExtended.TransactionID = accounttransactions.TransactionID
-		WHERE	accounttransactionsExtended.AccountID = $defaultaccount
-		AND		accounttransactionsExtended.VerifiedDate is not null
+		SELECT 	*, UNIX_TIMESTAMP(accounttransactionsextended.EntryDate) as phpEntryDate, accounttransactions.EntryDate, accounttransactions.VerifiedDate
+		FROM	accounttransactionsextended
+		LEFT JOIN accounttransactions on accounttransactionsextended.TransactionID = accounttransactions.TransactionID
+		WHERE	accounttransactionsextended.AccountID = $defaultaccount
+		AND		accounttransactionsextended.VerifiedDate is not null
 		ORDER BY accounttransactions.EntryDate desc
 		limit 40
 	");

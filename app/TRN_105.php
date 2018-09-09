@@ -171,7 +171,7 @@
         $accountsummary = query("
             SELECT      Sum(Amount) as accountTotal
             FROM	    accounts
-            left join   accounttransactionsExtended on accounts.AccountID = accounttransactionsExtended.AccountID
+            left join   accounttransactionsextended on accounts.AccountID = accounttransactionsextended.AccountID
             Where       accounts.Summary = 'Y' and AccountDeleted <> 'Y'
         ");
         

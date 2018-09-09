@@ -23,7 +23,7 @@
 	
 	$accounts = $AccountList = $db->query("
 		SELECT 	AccountId, AccountDescription, sum(amount) as Balance
-		FROM	accounttransactionsExtended
+		FROM	accounttransactionsextended
 		WHERE	AccountID IN $ActiveAccountList
 		GROUP BY  AccountID,AccountDescription
 	")->fetchAll();

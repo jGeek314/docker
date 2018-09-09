@@ -152,7 +152,7 @@
             SELECT	accounts.*, b.Balance, coalesce(accountslinked.AccountID,0) as IsSlushy
             FROM	accounts
             left join (Select AccountID, Sum(amount) as Balance 
-                       from   accounttransactionsExtended 
+                       from   accounttransactionsextended 
                        where  AccountID = $AccountID
                        group by AccountID) b on accounts.AccountID = b.AccountID
             left join accounts as accountslinked on accounts.linkedAccountID = accountslinked.AccountID
