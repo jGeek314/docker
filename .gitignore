@@ -6,3 +6,4 @@ backup.sql
 logs/*/*
 config/*
 env.php
+!.keep
