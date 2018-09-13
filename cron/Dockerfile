@@ -7,4 +7,6 @@ RUN apk update \
 COPY ./backup.sh /usr/local/bin/backup.sh
 COPY ./crontab /var/spool/cron/crontabs/root
 
+RUN chmod u+x /usr/local/bin/backup.sh
+
 ENTRYPOINT ["crond", "-f"]
