@@ -106,7 +106,7 @@
             <td class="right"><?= $row['SummaryHide'] ?> </td>
             <td class="right"></td>
             <td class="right">
-                <img class="active" src="./images/Add.png" onclick="Add('<?= $row['CategoryID'] ?>')"/>
+                <img class="active" src="./images/add.png" onclick="Add('<?= $row['CategoryID'] ?>')"/>
             </td>
         </tr>
         <?php } ?>
