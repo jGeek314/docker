@@ -400,7 +400,7 @@
 </table>
 </div>
 <div id="AutoSubmit"></div>
-<?php require( 'Includes/Site_Layout_End.php');?>
+<?php require( 'includes/Site_Layout_End.php');?>
     
      <script>
 

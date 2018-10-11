@@ -82,7 +82,7 @@
 	
 	?>
 ...proccess complete. Do not refresh this page.
-<?php require( 'Includes/Site_Layout_End.php');?>
+<?php require( 'includes/Site_Layout_End.php');?>
 
 
 </body>
