@@ -36,7 +36,7 @@
               <div class="navbar-collapse collapse" id="navbar">
                 <ul class="navbar-nav mr-auto">
                   <li class="nav-item">
-                    <a class="nav-link <?= matchDisplay($curpage,'index.php','active') ?>" href="index.php">accounts</a>
+                    <a class="nav-link <?= matchDisplay($curpage,'index.php','active') ?>" href="index.php">Accounts</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link <?= matchDisplay($curpage,'TRN_400.php','active') ?>" href="TRN_400.php">Transfer</a>
