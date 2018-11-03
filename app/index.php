@@ -2,7 +2,7 @@
 
 <html>
 <head>
-    <title>Checkbook - accounts Summary</title>
+    <title>Checkbook - Accounts Summary</title>
     <?php require( 'includes/Site_Header.php'); ?>
 
 </head>
@@ -115,7 +115,7 @@
         <span class="badge badge-light summary">
             $<?=$accountsummary?>
         </span>
-        <span>- accounts Summary</span>
+        <span>- Accounts Summary</span>
      
     </div>
 

@@ -141,7 +141,7 @@ function validateDate($date){
 
 function getAccountIcon($val){           
     switch($val){
-        case 'Checking accounts':
+        case 'Checking Accounts':
             return '<i class="fa fa-money"></i>';
         case 'Virtual':
             return '<i class="fa fa-snapchat-ghost"></i>';
