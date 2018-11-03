@@ -108,8 +108,8 @@
                 <?php
 
                 switch ($curpage) {
-                    case "";            echo "accounts Summary";    break;
-                    case "INDEX.php":   echo "accounts Summary";    break;
+                    case "";            echo "Accounts Summary";    break;
+                    case "INDEX.php":   echo "Accounts Summary";    break;
                     case "TRN_015.php": echo "Add/Edit Account";    break;
                     case "TRN_250.php": echo "Search Transactions"; break;
                     case "TRN_300.php": echo "Cost Breakdown by categories: ".$defaultaccountDescr; break;
